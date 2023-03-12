@@ -1,0 +1,15 @@
+{% extends "base.html" %} 
+{% block title %}Entry{% endblock %}
+{% block content %}
+<div class="col overflow-auto h-100 p-4 ">
+    <h1>ENTRY</h1>
+    <br>
+    <h1>{{entry.title}}</h1>
+    <p>{{entry.text}}</p>
+    <p>Yours truly {{entry.author.first_name}}</p>
+    <blockquote>{{entry.created}}</blockquote>
+    <br>
+    <a href="{% url 'edit_entry' entry.id %}" class="text-dark">edit</a><br>
+    <a href="{% url 'delete_entry' entry.id %}" class="btn btn-danger btn-outline-dark text-light">delete</a>
+</div>
+{% endblock %}

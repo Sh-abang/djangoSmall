@@ -1,0 +1,54 @@
+header{
+    /*background-color: #61dafb;*/
+    background-image: linear-gradient(180deg, #41c2fc, #8be5fa);
+}
+.container{
+    width:100%;
+    /*background-color: purple;*/
+    margin:0 auto;
+    max-width: 1100px;
+}
+.container-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+.logo_noBG{
+    width: 150px;
+    padding: 5px;
+}
+.titleText{
+    text-decoration: none;
+    font-family: "Sofia", sans-serif;
+}
+.listItem{
+    color: black;
+    margin-left: 10px;
+    text-decoration: none;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.activeLink{
+    color: purple;
+    border-bottom: 5px white;
+}
+.icon{
+    color: white;
+    margin-right:10px;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 60em) {
+    .icon{
+        margin-left: 5px;
+    }
+    .titleText{
+        color: #424242;
+        text-decoration: none;
+        font-family: "Sofia", sans-serif;
+        /* font-family: 'Poppins', sans-serif; */
+        font-size: 12px;
+    }
+    .listItem{
+        font-size: 14px;
+    }
+}

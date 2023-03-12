@@ -1,0 +1,15 @@
+{% extends "auth_base.html" %}
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    <h1>Login</h1>
+    <!-- <input type="email" name="email" id="email" placeholder="Enter email address" required><br> -->
+    <input type="text" name="email" id="email" placeholder="Enter E-mail address" required><br>
+    <input type="password" name="password" id="password" placeholder="Enter Password" required><br>
+    <!-- <input type="file" id="profilePicture"  required><br> -->
+    <button type="submit" class="submit">Log in</button><br>
+    <p>No account ?   <a href="{% url 'register' %}">     Register</a></p>
+</form>
+
+{% endblock %}

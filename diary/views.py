@@ -5,6 +5,7 @@ from .forms import EntryForm
 # from django.urls import reverse
 # from django.contrib.auth.models import User
 # from django.contrib.auth import authenticate, login, logout
+from django.db.models import DateField
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -37,19 +38,20 @@ def create_entry(request):
     createForm = EntryForm()
 
     if request.method == 'POST':
-        title = request.POST['']
-        summary = request.POST['']
-        created = request.POST['']
-        text = request.POST['']
-        author = request.POST['']
+        # title = request.POST['title']
+        # summary = request.POST['summary']
+        # text = request.POST['text_content']
+        # author = request.user
         
-
+        # entry = Entry(title=title,summary=summary,text=text,author=author)
+        # entry.save()
+        # return redirect('/diary')
         createForm = EntryForm(request.POST)
         if createForm.is_valid():
             createForm.save()
             return redirect('/diary')
     context = {'form':createForm}
-    return render(request,  "diary/create_entry.html", context)
+    return render(request,  "diary/create_entry.html",context)
 
 @login_required(login_url='login')
 def edit_entry(request, entry_id):

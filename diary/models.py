@@ -56,7 +56,7 @@ class Entry(models.Model) :
     title = models.CharField(max_length=100)
     summary = models.CharField(max_length=254)
     text = models.TextField()
-    created = models.DateTimeField('date published')
+    created = models.DateTimeField(auto_now=True, blank=True)
     # last_modified = models.DateTimeField
     author = models.ForeignKey(MyUser, on_delete=models.CASCADE, null=True)
 

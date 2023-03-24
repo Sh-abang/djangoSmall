@@ -19,7 +19,7 @@ def index(request):
     #         user_specific_entries.append(entry)
     # if entries_list == []:
     #     context = {'user_specific_entries': "No entries yet >_<"}
-    print(entries_list.all())
+    # print(entries_list.all())
     context = {'user_specific_entries': entries_list}
     return render(request, "diary/index.html",context)
 
@@ -48,7 +48,10 @@ def create_entry(request):
         # return redirect('/diary')
         createForm = EntryForm(request.POST)
         if createForm.is_valid():
-            createForm.save()
+            entryObject = createForm.save()
+            # print(entryObject.title +"__++__"+str(request.user.email))
+            entryObject.author = request.user
+            entryObject.save()
             return redirect('/diary')
     context = {'form':createForm}
     return render(request,  "diary/create_entry.html",context)

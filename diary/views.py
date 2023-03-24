@@ -2,24 +2,13 @@ from django.shortcuts import render, get_object_or_404, get_list_or_404, redirec
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from .models import Entry
 from .forms import EntryForm
-# from django.urls import reverse
-# from django.contrib.auth.models import User
-# from django.contrib.auth import authenticate, login, logout
 from django.db.models import DateField
 from django.contrib.auth.decorators import login_required
 
-# Create your views here.
     
 @login_required(login_url='login')
 def index(request):
     entries_list = Entry.objects.filter(author=request.user).order_by('-created')
-    # user_specific_entries =[]
-    # for entry in entries_list:
-    #     if entry.author.email == request.user.email:
-    #         user_specific_entries.append(entry)
-    # if entries_list == []:
-    #     context = {'user_specific_entries': "No entries yet >_<"}
-    # print(entries_list.all())
     context = {'user_specific_entries': entries_list}
     return render(request, "diary/index.html",context)
 
@@ -38,14 +27,6 @@ def create_entry(request):
     createForm = EntryForm()
 
     if request.method == 'POST':
-        # title = request.POST['title']
-        # summary = request.POST['summary']
-        # text = request.POST['text_content']
-        # author = request.user
-        
-        # entry = Entry(title=title,summary=summary,text=text,author=author)
-        # entry.save()
-        # return redirect('/diary')
         createForm = EntryForm(request.POST)
         if createForm.is_valid():
             entryObject = createForm.save()

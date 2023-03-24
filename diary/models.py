@@ -2,8 +2,6 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager, User
 
 
-# Create your models here.
-
 class CustomAccountManager(BaseUserManager):
 
     def create_user(self,user_name,email,first_name,last_name,dob,password,**other_fields):
@@ -39,8 +37,6 @@ class MyUser(AbstractBaseUser, PermissionsMixin) :
     dob = models.DateField()
     user_name = models.CharField(max_length=150, unique=True)
     email = models.EmailField(max_length=254, unique=True)
-    # password = models.CharField(max_length=50, default="password")
-    # profilePicture = models.ImageField(upload_to='images/', default='default')
 
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
@@ -57,7 +53,6 @@ class Entry(models.Model) :
     summary = models.CharField(max_length=254)
     text = models.TextField()
     created = models.DateTimeField(auto_now=True, blank=True)
-    # last_modified = models.DateTimeField
     author = models.ForeignKey(MyUser, on_delete=models.CASCADE, null=True)
 
     def __str__(self) :

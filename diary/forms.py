@@ -5,7 +5,3 @@ class EntryForm(ModelForm):
     class Meta:
         model = Entry
         fields = ('title', 'summary', 'text')
-
-        # widgets = {
-        #     ''
-        # }

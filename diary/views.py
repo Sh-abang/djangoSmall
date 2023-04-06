@@ -46,7 +46,7 @@ def edit_entry(request, entry_id):
             createForm.save()
             return redirect('/diary')
     context ={'form': form}
-    return render(request, "diary/create_entry.html", context)
+    return render(request, "diary/edit_entry.html", context)
 
 @login_required(login_url='login')
 def delete(request, entry_id):

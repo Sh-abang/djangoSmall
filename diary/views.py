@@ -30,7 +30,6 @@ def create_entry(request):
         createForm = EntryForm(request.POST)
         if createForm.is_valid():
             entryObject = createForm.save()
-            # print(entryObject.title +"__++__"+str(request.user.email))
             entryObject.author = request.user
             entryObject.save()
             return redirect('/diary')

@@ -9,8 +9,8 @@
 }
 body{
     font-family: 'Helvetica Neue','Roboto Condensed', sans-serif;
-    background: url("/static/diary/gray-brick-wall.webp") no-repeat fixed;
-    background-size: cover;
+    /* background: url("/static/diary/gray-brick-wall.webp") no-repeat fixed;
+    background-size: cover; */
     overflow: auto;
 }
 
@@ -23,7 +23,7 @@ body{
 .card{
     /* width: 18em; */
     overflow: hidden;
-    box-shadow: 0 2px 10px rgb(130, 130, 130);
+    box-shadow: 0 2px 10px rgb(199, 114, 255);
     border-radius: 5px;
     /* display: flex;
     flex-direction: column; */

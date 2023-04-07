@@ -17,7 +17,11 @@
             </div><br><br>
         {% endfor %}
     {% else %}
-            <h1>No entries yet (>_<)</h1>
+        <div class="col-md-12 text-center position-absolute top-50 start-50 translate-middle">
+            <h1>No entries yet (>_<)</h1><br><br>
+            <a href="{% url 'create_entry' %}" class="text-center btn btn-outline-dark">START CREATING</a>
+        </div>    
+            
     {% endif %}
 </div>
 {% endblock %}

@@ -29,7 +29,7 @@
         </div>
     </nav> -->
 
-    <nav class="navbar navbar-expand-lg bg-dark justify-content-between pe-4">
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark justify-content-between pe-4">
         <div class="container-fluid">
             <a class="titleText navbar-brand text-light " href="{% url 'index' %}"><h2>Memoir Moments</h2></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,10 +70,10 @@
         </div>
       </nav>
 
-    <div class="container-fluid h-100 ">
-        <div class="row h-100 mb-5">
+    <div class="container-fluid h-100 overflow-auto">
+        <div class="row h-100 ">
             <!-- <div class="col-2 p-1"></div> -->
-            <div class="col-md-8 offset-md-2">{% block content %}{% endblock %}</div>
+            <div class="col-md-8 offset-md-2  mt-4 mb-4 rounded-1 bg-body">{% block content %}{% endblock %}</div>
             
             <!-- <div class="col-2 p-1" ></div> -->
             

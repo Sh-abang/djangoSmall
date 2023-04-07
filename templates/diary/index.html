@@ -7,12 +7,12 @@
 <div class="col overflow-auto h-100 p-4">
     {% if  user_specific_entries %}
         {% for entry in user_specific_entries %}
-            <div class="row no-gutters bg-light position-relative  border-dark border-bottom">
-                <div class="col-md-6 position-static p-4 pl-md-0">
+            <div class="row card no-gutters bg-light position-relative  border-dark border-bottom">
+                <div class="col-md-6 position-static p-3 pl-md-0">
                     <h5 class="mt-0">{{ entry.title }}</h5>
                     <p>{{ entry.summary }}</p>
                     <a href="{% url 'entry' entry.id %}" class="stretched-link"><small class="text-muted">View entry . . .</small></p></a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
                 </div>
             </div><br><br>
         {% endfor %}

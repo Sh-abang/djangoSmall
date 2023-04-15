@@ -1,16 +1,13 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-
 <div class="col overflow-auto h-100 p-3">
-    <h1 class="text-center">Edit Entry</h1>
+    <h1 class="text-center">Edit Profile</h1>
     <form action="" method="post">
         {% csrf_token %}
         {{ form|crispy }}
-        <div class="form-group d-flex justify-content-center"><button type="submit" class="btn btn-outline-primary">Save</button><br></div>
-        
+        <div class="form-group m-2"></div>
+        <button type="submit" class="btn btn-outline-primary">Save</button><br>
     </form>
 </div>
-
-
 {% endblock %}

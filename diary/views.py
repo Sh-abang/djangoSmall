@@ -59,4 +59,4 @@ def delete(request, entry_id):
 
 @login_required(login_url='login')
 def profile(request):
-    return render(request, "diary/profile.html", {})
+    return render(request, "diary/edit_profile.html", {})

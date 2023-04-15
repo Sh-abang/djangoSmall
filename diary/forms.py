@@ -5,3 +5,5 @@ class EntryForm(ModelForm):
     class Meta:
         model = Entry
         fields = ('title', 'summary', 'text')
+
+# class ProfileForm():

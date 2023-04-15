@@ -55,7 +55,7 @@
                         {{ request.user.user_name.upper }}
                     </a>
                     <ul class="dropdown-menu ">
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
                     <!-- <li><hr class="dropdown-divider"></li> -->
@@ -70,10 +70,10 @@
         </div>
       </nav>
 
-    <div class="container-fluid h-100 overflow-auto">
-        <div class="row h-100 ">
+    <div class="container-fluid h-100 overflow-auto bg-light">
+        <div class="row h-100 bg-light">
             <!-- <div class="col-2 p-1"></div> -->
-            <div class="col-md-8 offset-md-2  mt-4 mb-4  bg-body border-secondary border-start border-end">{% block content %}{% endblock %}</div>
+            <div class="col-md-8 offset-md-2  mt-4 mb-4 bg-light border-secondary border-start border-end">{% block content %}{% endblock %}</div>
             
             <!-- <div class="col-2 p-1" ></div> -->
             
